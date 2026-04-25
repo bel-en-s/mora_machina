@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Mora Machina",
+  "version": "1.0.0",
+  "description": "Una máquina de la pausa: una entidad contemplativa que observa e interrumpe suavemente.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["styles.css"],
+      "js": ["activity.js", "ui.js", "content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["messages.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
