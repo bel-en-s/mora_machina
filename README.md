@@ -1,4 +1,12 @@
 # Mora Machina
+Developed by
+
+Divino Divino
+https://divinodivino.com
+
+
+Venus es Libre
+https://www.instagram.com/venuseslibre/
 
 **Mora Machina** es una extensión de navegador concebida como una pieza artística: una “máquina de la pausa” que habita silenciosamente en la interfaz y observa la actividad del usuario.
 
