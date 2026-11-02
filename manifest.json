@@ -3,18 +3,39 @@
   "name": "Mora Machina",
   "version": "1.0.0",
   "description": "Una máquina de la pausa: una entidad contemplativa que observa e interrumpe suavemente.",
-  "permissions": ["storage"],
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "css": ["styles.css"],
-      "js": ["activity.js", "ui.js", "content.js"]
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "js": [
+        "config.js",
+        "activity.js",
+        "ui.js",
+        "content.js"
+      ]
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["messages.json"],
-      "matches": ["<all_urls>"]
+      "resources": [
+        "messages.json",
+        "config.js",
+        "assets/idle.gif",
+        "assets/talking.gif",
+        "project.html",
+        "project.css",
+        "project.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
     }
   ]
 }

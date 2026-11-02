@@ -1,0 +1,203 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0d0d0d;
+  color: #ededed;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 40px 20px;
+}
+
+header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0 0 10px 0;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+p {
+  line-height: 1.6;
+  color: #ccc;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+textarea {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #555;
+  background: #222;
+}
+
+button {
+  background: #ededed;
+  color: #0d0d0d;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  align-self: flex-start;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+label {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+
+input[type="number"] {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  max-width: 120px;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #555;
+  background: #222;
+}
+
+.status {
+  color: #7c9cff;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
+#messages-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 3px solid #555;
+}
+
+.message-edit {
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  resize: vertical;
+  min-height: 60px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.message-edit:focus {
+  outline: none;
+  border-color: #555;
+}
+
+.delete-btn {
+  align-self: flex-start;
+  background: transparent;
+  color: #c96;
+  border: 1px solid #c96;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.delete-btn:hover {
+  opacity: 0.7;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.primary {
+  background: #7c9cff;
+  color: #0d0d0d;
+  font-weight: 600;
+}
+
+#messages-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#messages-list li {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 3px solid #555;
+  color: #ccc;
+  line-height: 1.5;
+}

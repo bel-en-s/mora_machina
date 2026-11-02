@@ -3,10 +3,10 @@ window.MoraMachinaActivity = class MoraMachinaActivity {
   constructor(onInterventionCallback) {
     this.onIntervention = onInterventionCallback;
     
-    // Configurable thresholds for easy testing
-    // Default: 1 minute active -> Trigger intervention (testing mode)
+    // Thresholds. ACTIVE_THRESHOLD is overridden by settings in init().
+    // Default: 1 minute active -> Trigger intervention
     // Default: 5 minutes idle -> Reset accumulated time
-    this.ACTIVE_THRESHOLD = 1 * 60 * 1000; 
+    this.ACTIVE_THRESHOLD = 60 * 1000;
     this.RESET_THRESHOLD = 5 * 60 * 1000;
     
     this.lastActivityTime = Date.now();
@@ -18,8 +18,10 @@ window.MoraMachinaActivity = class MoraMachinaActivity {
 
   async init() {
     // Load accumulated state from storage
-    const data = await chrome.storage.local.get(["accumulatedTime", "lastActivityTime"]);
-    
+    const data = await chrome.storage.local.get(["accumulatedTime", "lastActivityTime", "settings"]);
+    const minutes = data.settings?.intervalMinutes ?? 1;
+    this.ACTIVE_THRESHOLD = minutes * 60 * 1000;
+
     const now = Date.now();
     if (data.lastActivityTime && data.accumulatedTime) {
       const timeSinceLastActivity = now - data.lastActivityTime;
@@ -44,6 +46,10 @@ window.MoraMachinaActivity = class MoraMachinaActivity {
           if (Math.abs(this.lastActivityTime - changes.lastActivityTime.newValue) > 2000) {
             this.lastActivityTime = changes.lastActivityTime.newValue;
           }
+        }
+        if (changes.settings && changes.settings.newValue) {
+          const minutes = changes.settings.newValue.intervalMinutes ?? 1;
+          this.ACTIVE_THRESHOLD = minutes * 60 * 1000;
         }
       }
     });

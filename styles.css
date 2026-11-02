@@ -39,29 +39,26 @@
 }
 
 #mora-machina-entity {
-  width: 80px;
-  height: 80px;
-  /* Hacemos el placeholder muy visible temporalmente para que veas que funciona */
-  background: radial-gradient(circle, rgba(200, 200, 255, 0.8) 0%, rgba(50, 50, 150, 0.9) 70%);
-  box-shadow: 0 0 15px rgba(200, 200, 255, 0.5);
-  border-radius: 50%;
-  animation: mora-machina-breathe 4s infinite ease-in-out;
+  width: 120px;
+  height: 120px;
   pointer-events: auto;
   position: relative;
-  /* Container is ready for future canvas/video/sprites injection */
 }
 
-@keyframes mora-machina-breathe {
-  0% {
-    transform: scale(1);
-    opacity: 0.6;
+#mora-machina-angel {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  animation: mora-machina-float 3s ease-in-out infinite;
+}
+
+@keyframes mora-machina-float {
+  0%, 100% {
+    transform: translateY(0);
   }
   50% {
-    transform: scale(1.05) translateY(-5px);
-    opacity: 0.9;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.6;
+    transform: translateY(-6px);
   }
 }
